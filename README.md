@@ -17,6 +17,17 @@ g++ -o client client.cpp -lboost_system -lpthread
 g++ -o server server.cpp -lboost_system -lpthread
 ```
 
+## To recieve dataset from server run in the root of project directory:
+```
+./bin/{your_os}/client
+```
+
+## To run your own server, compile your version of server.cpp
+## and run in the root of project directory:
+```
+./bin/{your_os}/server
+```
+
 # Services description
 
 ## DatasetService
