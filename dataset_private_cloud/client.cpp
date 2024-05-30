@@ -9,7 +9,7 @@ using namespace std::chrono;
 
 const int CHUNK_SIZE = 1024;
 
-const std::string FILE_PATH = "./data/dataset.csv";
+const std::string FILE_PATH = "./../../data/dataset.csv";
 const std::string SERVER_HOST = "193.201.15.79";
 const std::string SERVER_PORT = "7709";
 
