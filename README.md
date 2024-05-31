@@ -17,6 +17,31 @@ g++ -o client client.cpp -lboost_system -lpthread
 g++ -o server server.cpp -lboost_system -lpthread
 ```
 
+## To recieve dataset from server run in the root of project directory:
+```
+./bin/{your_os}/client ./absolut/path/to/file/file_to_save.csv
+```
+
+### MACOS WARNING
+it is tested on macos and we encountered few problems
+if you install boost library using brew, it will endup 
+being relocated for some reason on /usr/* and your 
+compiler will not find it
+So you will need to use brew info boost to find presize 
+location and specificaly link it using -I
+If you have any problems, reachout to nikborsh.ufo@gmail.com
+Additional warning is that on m1 you might need to compile 
+like this :
+```
+g++ -std=c++17 -o client client.cpp -I/opt/homebrew/Cellar/boost/1.85.0/include -L/opt/homebrew/Cellar/boost/1.85.0/lib -lboost_system -lpthread
+```
+
+## To run your own server, compile your version of server.cpp
+## and run in the root of project directory:
+```
+./bin/{your_os}/server
+```
+
 # Services description
 
 ## DatasetService
