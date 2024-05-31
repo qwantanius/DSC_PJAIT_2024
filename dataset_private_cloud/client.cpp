@@ -9,7 +9,6 @@ using namespace std::chrono;
 
 const int CHUNK_SIZE = 1024;
 
-const std::string FILE_PATH = "./../../data/dataset.csv";
 const std::string SERVER_HOST = "193.201.15.79";
 const std::string SERVER_PORT = "7709";
 
@@ -31,7 +30,14 @@ void receive_file(tcp::socket& socket, const std::string& file_path) {
     file.close();
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        std::cerr << "Usage: " << argv[0] << " <file_path>" << std::endl;
+        return 1;
+    }
+
+    std::string file_path = argv[1];
+
     try {
         boost::asio::io_service io_service;
         tcp::resolver resolver(io_service);
@@ -46,7 +52,7 @@ int main() {
 
         auto start = high_resolution_clock::now();
 
-        receive_file(socket, FILE_PATH);
+        receive_file(socket, file_path);
 
         auto end = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end - start).count();
