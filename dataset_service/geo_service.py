@@ -34,13 +34,13 @@ class GeoService:
                 icon=folium.Icon(icon="cloud"),
             ).add_to(self.current_map)
     
-    def add_points(self, points: list[MapPoint], marker_type='pin'):
+    def add_points(self, points, marker_type='pin'):
         for point in points:
             self.add_point(point, marker_type)
 
         return self
     
-    def add_trailed_points(self, points: list[MapPoint], trail_name: str, marker_type='pin'):
+    def add_trailed_points(self, points,  trail_name: str, marker_type='pin'):
         trails = []
         for point in points:
             self.add_point(point, marker_type)

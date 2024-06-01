@@ -7,3 +7,5 @@ class MapPoint:
         
     def __str__(self) -> str:
         return f"POINT: {self.label} (x:{self.x}, y: {self.y})"
+    
+    #/Users/maciek/DSC/DSC_PJAIT_2024/data/NYPD_Complaint_Data_Historic_20240528.csv
