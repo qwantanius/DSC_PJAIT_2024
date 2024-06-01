@@ -1,6 +1,10 @@
 # DSC_PJAIT_2024
 
-# Instalation for developers
+We advise to use precompiled clients in 
+./bin folder, however if you want to compile
+source code by yourself, follow instructions below:
+
+# Linux instalation
 
 You must have `pip, python, c++, g++`
 
@@ -42,13 +46,26 @@ g++ -std=c++17 -o client client.cpp -I/opt/homebrew/Cellar/boost/1.85.0/include 
 ./bin/{your_os}/server
 ```
 
+# Windows instalation 
+
+If you want to avoid downloading VSCode and other heavy stuff for C++: download MSYS64
+You will need to install using pacman c++ 
+next using pacman you will need install boost
+https://sajidifti.medium.com/how-to-install-gcc-and-gdb-on-windows-using-msys2-tutorial-0fceb7e66454
+https://stackoverflow.com/questions/68913457/how-do-i-compile-c-code-with-boost-on-msys2
+
+To compile client from source code, you can run:
+```
+g++ -o client client.cpp -lboost_system-mt -lws2_32
+```
+
 # Services description
 
 ## DatasetService
 Deprecated service that we used to retrieve dataset using API
 we replaced this service with c++ written client that fetch
 data from our server with our server software written in c++ 
-eventually it speeds up to +-8 minutes for retrieving whole 
+eventually it speeds up to +-6 minutes for retrieving whole 
 dataset instead of 1 hour+ using API (1*10^6 rows per +-20 mins)
 Example of usage: 
 ```python
