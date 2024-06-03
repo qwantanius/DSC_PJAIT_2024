@@ -1,35 +1,60 @@
-DONE | CMPLNT_NUM random unique number ID of a complaint (completly useless in any training/visualization) 
-CMPLNT_FR_DT = mm/dd/yyyy of occurence (maybe we can plot  crime rate depending on the time of the year)
-CMPLNT_FR_TM = hh:mm:ss of occurence
-CMPLNT_TO_DT = mm/dd/yyyy end time of occurence
-CMPLNT_TO_TM = hh:mm:ss end time of occurence ( here we can visualize which crimes take longer to resolve depending on the offense, like classificator with some input data and if it is likely to be solveed within a time limit yes/no"
-ADDR_PCT_CD = the precinct in which accident occured (some basics plots but still, we can visualize statistics of crimes based on precinct)
-RPT_DT = mm/dd/yyyy when the accident was actually reported
-KY_CD = three digit offense classification code (more general terms) 
-DONE | OFNS_DESC Description of offense corresponding with key code 
-PD_CD three digit internal classification code (more descriptive than ky_cd)
-PD_DESC = description of PD_CD
-CRM_ATPT_CPTD_CD = COMPLETED/ATTEMPTED (basically means if the suspect executed his plan or not)
-LAW_CAT_CD = level of offense felony, misdemeanor, violation
-BORO_NM = borough name (so called districts within a city)
-LOC_OF_OCCUR_DESC = Specific location of occurrence in or around the premises; inside, opposite of, front of, rear of
-PREM_TYP_DESC = specific description of premises; grocery store, residence etc
-JURIS_DESC = Jurisdiction responsible for the incident report. 
-JURISDICION_CODE = Jurisdiction responsible for incident. Either internal, like Police(0), Transit(1), and Housing(2); or external(3), like Correction, Port Authority, etc.
-PARKS_NM = name of park ,playground or greenspace if occurence happened there (i dont think we should drop all row if this is null, simply divide like use rows where this column is null to classify other places of crime occurence, and vice verse if we are only interested in crimes occured in parks, playground etc
-HADEVELOPT = Name of NYCHA housing development of occurrence, if applicable
-HOUSING_PSA = Development Level Code (Public Service Area (PSA))
-X_COORD_CD = X coordinate for New York State Plane Coordinate System
-Y_COORD_CD = Y coordinate for New York State Plane Coordinate System
-SUSP_AGE_GROUP = Age group of the suspect involved in the incident. <18, 18-24. 25-44, 45-64. 65+, UNKNOWN
-SUSP_RACE = suspect`s race (WHITE, BLACK. ASIAN / PACIFIC ISLANDER, AMERICAN INDIAN / ALASKAN NATIVE, BLACK HISPANIC, WHITE HISPANIC, UNKNOWN, OTHER)
-SUSP_SEX = M, F, U (unknown)
-TRANSIT_DISTRICT = transit disctrict in which offense occured
-Latitude = self explanatory
-Longitude = self explanatory
-Lat_Lon = lat and lon together
-PATROL_BORO = Patrol borough where the incident occurred
-STATION_NAME = Name of the transit station where the incident occurred
-VIC_AGE_GROUP = victim`s age group <18, 18-24. 25-44, 45-64. 65+, UNKNOWN
-VIC_RACE = victim`s race (WHITE, BLACK. ASIAN / PACIFIC ISLANDER, AMERICAN INDIAN / ALASKAN NATIVE, BLACK HISPANIC, WHITE HISPANIC, UNKNOWN, OTHER)
-VIC_SEX = victim’s Sex Description (M, F, U (unknown))
+
++---------------------+---------------------------------------------------------------------+
+| Field               | Description                                                         |
++---------------------+---------------------------------------------------------------------+
+| DONE | CMPLNT_NUM   | random unique number ID of a complaint (completely useless in any   |
+|                     | training/visualization)                                             |
+| CMPLNT_FR_DT        | mm/dd/yyyy of occurrence (maybe we can plot crime rate depending on |
+|                     | the time of the year)                                               |
+| CMPLNT_FR_TM        | hh:mm:ss of occurrence                                              |
+| CMPLNT_TO_DT        | mm/dd/yyyy end time of occurrence                                   |
+| CMPLNT_TO_TM        | hh:mm:ss end time of occurrence (we can visualize which crimes take |
+|                     | longer to resolve depending on the offense, like a classifier with  |
+|                     | some input data and if it is likely to be solved within a time      |
+|                     | limit yes/no)                                                       |
+| ADDR_PCT_CD         | the precinct in which accident occurred (some basic plots but still,|
+|                     | we can visualize statistics of crimes based on precinct)            |
+| RPT_DT              | mm/dd/yyyy when the accident was actually reported                  |
+| KY_CD               | three digit offense classification code (more general terms)        |
+| DONE | OFNS_DESC    | Description of offense corresponding with key code                  |
+| PD_CD               | three digit internal classification code (more descriptive than     |
+|                     | ky_cd)                                                              |
+| PD_DESC             | description of PD_CD                                                |
+| CRM_ATPT_CPTD_CD    | COMPLETED/ATTEMPTED (basically means if the suspect executed his    |
+|                     | plan or not)                                                        |
+| LAW_CAT_CD          | level of offense felony, misdemeanor, violation                     |
+| BORO_NM             | borough name (so called districts within a city)                    |
+| LOC_OF_OCCUR_DESC   | Specific location of occurrence in or around the premises; inside,  |
+|                     | opposite of, front of, rear of                                      |
+| PREM_TYP_DESC       | specific description of premises; grocery store, residence etc      |
+| JURIS_DESC          | Jurisdiction responsible for the incident report.                   |
+| JURISDICION_CODE    | Jurisdiction responsible for incident. Either internal, like Police |
+|                     | (0), Transit (1), and Housing (2); or external (3), like Correction,|
+|                     | Port Authority, etc.                                                |
+| PARKS_NM            | name of park, playground or greenspace if occurrence happened there |
+|                     | (we shouldn't drop all rows if this is null, simply divide like use |
+|                     | rows where this column is null to classify other places of crime    |
+|                     | occurrence, and vice versa if we are only interested in crimes      |
+|                     | occurred in parks, playground etc.)                                 |
+| HADEVELOPT          | Name of NYCHA housing development of occurrence, if applicable      |
+| HOUSING_PSA         | Development Level Code (Public Service Area (PSA))                  |
+| X_COORD_CD          | X coordinate for New York State Plane Coordinate System             |
+| Y_COORD_CD          | Y coordinate for New York State Plane Coordinate System             |
+| SUSP_AGE_GROUP      | Age group of the suspect involved in the incident. <18, 18-24. 25-44|
+|                     | 45-64. 65+, UNKNOWN                                                 |
+| SUSP_RACE           | suspect’s race (WHITE, BLACK. ASIAN / PACIFIC ISLANDER, AMERICAN    |
+|                     | INDIAN / ALASKAN NATIVE, BLACK HISPANIC, WHITE HISPANIC, UNKNOWN,   |
+|                     | OTHER)                                                              |
+| SUSP_SEX            | M, F, U (unknown)                                                   |
+| TRANSIT_DISTRICT    | transit district in which offense occurred                          |
+| Latitude            | self-explanatory                                                    |
+| Longitude           | self-explanatory                                                    |
+| Lat_Lon             | lat and lon together                                                |
+| PATROL_BORO         | Patrol borough where the incident occurred                          |
+| STATION_NAME        | Name of the transit station where the incident occurred             |
+| VIC_AGE_GROUP       | victim’s age group <18, 18-24. 25-44. 45-64. 65+, UNKNOWN           |
+| VIC_RACE            | victim’s race (WHITE, BLACK. ASIAN / PACIFIC ISLANDER, AMERICAN     |
+|                     | INDIAN / ALASKAN NATIVE, BLACK HISPANIC, WHITE HISPANIC, UNKNOWN,   |
+|                     | OTHER)                                                              |
+| VIC_SEX             | victim’s Sex Description (M, F, U (unknown))                        |
++---------------------+---------------------------------------------------------------------+
